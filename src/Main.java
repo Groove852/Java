@@ -1,10 +1,10 @@
-import java.util.Scanner;
+import Mathematic.myMath;
+import Reading.consoleHelper;
 
 public class Main {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        Integer a = 12;
-        Integer b = 10;
-        System.out.println(a > b ? 12 : 10); // (выражение)?(если истинно):(если ложно)
+        Reading.consoleHelper ConsoleHelper = consoleHelper.getInstance();
+        Mathematic.myMath myMathematic = myMath.getInstance();
+        System.out.println(myMath.exponentiation(Double.parseDouble(ConsoleHelper.readMessage()), Double.parseDouble(ConsoleHelper.readMessage())));
     }
 }
