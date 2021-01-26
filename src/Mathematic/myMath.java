@@ -4,9 +4,9 @@ public class myMath {
 
     //Функция которая высчитывает степень числа
     public static Double exponentiation(Double number, Double degree){
-        Double check = null;
+        Double check = 1.0;
         for(int i = 0; i < degree; i++) {
-            check = number * number;
+            check = check * number;
         }
         return check;
     }
