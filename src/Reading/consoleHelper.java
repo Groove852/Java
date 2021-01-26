@@ -3,13 +3,13 @@ package Reading;
 import java.util.Scanner; //Подключение библиотеки для считывания из консоли
 
 public class consoleHelper {
-    //Функция которая считывает ввод со строки
+    //Метод который считывает ввод со строки
     public String readMessage(){
         Scanner scanner = new Scanner(System.in); //Создаём экземпляр класс Scanner
         return scanner.nextLine(); //Возвращаем то что считали
     }
 
-    //Функция которая пишет считанное
+    //Метод который пишет считанное
     public void writeMessage(String message){
         System.out.println(message);
     }

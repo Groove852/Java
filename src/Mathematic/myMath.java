@@ -2,7 +2,7 @@ package Mathematic;
 
 public class myMath {
 
-    //Функция которая высчитывает степень числа
+    //Метод который высчитывает степень числа
     public static Double exponentiation(Double number, Double degree){
         Double check = 1.0;
         for(int i = 0; i < degree; i++) {
@@ -11,7 +11,7 @@ public class myMath {
         return check;
     }
 
-    //Функция которая считает факториал
+    //Метод который считает факториал
     public static Double factorial(Double number){
         Double check = 1.0;
         for(int i = 1; i < number + 1; i++) {
