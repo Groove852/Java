@@ -19,9 +19,6 @@ public class myMath {
         }
         return check;
     }
-    public static Double numberRoot(Double number, Double root){
-
-    }
 
     private myMath(){}
 
