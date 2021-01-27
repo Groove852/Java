@@ -19,11 +19,4 @@ public class myMath {
         }
         return check;
     }
-
-    private myMath(){}
-
-    private static final myMath instance = new myMath();
-    public static myMath getInstance(){
-        return instance;
-    }
 }
