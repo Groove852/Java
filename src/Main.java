@@ -12,6 +12,6 @@ public class Main {
         myMass.show();
         myMass.deleteArray(2);
         myMass.show();
-        //dfdfdffds
+        //dfdfdffdssdf
     }
 }
