@@ -54,7 +54,7 @@ public class dynamicArray {
     //удаление элемента массива
     public void deleteArray(int index){
         int[] tmp = new int[this.realSize];
-        this.size -= 1;
+        this.size--;
         for (int i = 0; i < size; i++) {
             if (i < index){
                 tmp[i] = this.body[i];
