@@ -51,6 +51,42 @@ public class dynamicArray {
         }
     }
 
+    //удаление элемента массива
+    public void deleteArray(int index){
+        int[] tmp = new int[this.realSize];
+        this.size -= 1;
+        for (int i = 0; i < size; i++) {
+            if (i < index){
+                tmp[i] = this.body[i];
+            }
+            if (i >= index){
+                tmp[i] = this.body[i+1];
+            }
+        }
+        this.body = tmp;
+        
+    }
+
+    //Сортировка массива
+    public void sort(int arg){
+        boolean isMoved = false;
+        if(arg == 0){
+            for(int i = 0; i<size; i++){
+                for(int j =0; j < size-1; j++){
+                    if(body[j] < body[j+1]){
+                        int tmp = body[j+1];
+                        body[j + 1] = body[j];
+                        body[j] = tmp;
+                        isMoved = true;
+                    }
+                }
+                if(isMoved){
+                    break;
+                }
+            }
+        }
+    }
+
     //просмотр нужного элемента в массиве c помощью ввода значения из кода
     public String watch(int value){
         for (int i = 0; i < this.realSize; i++) {
@@ -78,6 +114,14 @@ public class dynamicArray {
             returning = "In our massive we didnt have this value";
         }
         return returning;
+    }
+
+    //показ массива
+    public void show(){
+        for(int i = 0; i< size; i++){
+            System.out.print(body[i] + " ");
+        }
+        System.out.println();
     }
 
     //просмотр всех переменных из класса
