@@ -14,7 +14,6 @@ public class dynamicArray {
     //private Object dynamicArray;
 
     Scanner scanner = new Scanner(System.in);
-    ClassAnalyzer classAnalyzer = new ClassAnalyzer();
 
     //создание массива с заложенным реальным размером
     public void myArray(){
@@ -148,8 +147,7 @@ public class dynamicArray {
         }
         str.append("\n").append("\n").append("Size - ").append(this.size);
         str.append("\n").append("Reserved size - ").append(this.realSize);
-        str.append("\n").append(classAnalyzer.analyzeClass(this));
-
+        str.append("\n").append(ClassAnalyzer.analyzeClass(this));
         return str.toString();
     }
 
