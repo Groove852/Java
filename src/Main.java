@@ -1,17 +1,18 @@
 import DynamicArray.dynamicArray;
+import Helpers.ClassAnalyzer;
 import Reading.consoleHelper;
 
 public class Main {
     public static void main(String[] args) {
         Reading.consoleHelper ConsoleHelper = consoleHelper.getInstance();
         dynamicArray myMass = new dynamicArray();
+        dynamicArray myArray = new dynamicArray();
         myMass.myArray(123);
-        for (int i = 0; i < 9; i++) {
+        myArray.myArray(123);
+        for (int i = 0; i < 10; i++) {
             myMass.add(i + 1);
+            myArray.add(i + 1);
         }
-        myMass.show();
-        myMass.deleteArray(2);
-        myMass.show();
-        //dfdfdffdssdf
+        System.out.println(myMass.toString());
     }
 }

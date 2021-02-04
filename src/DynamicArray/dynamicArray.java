@@ -1,5 +1,7 @@
 package DynamicArray;
 
+import Helpers.ClassAnalyzer;
+
 import java.util.Arrays;
 import java.util.Scanner;
 
@@ -9,8 +11,10 @@ public class dynamicArray {
     private int[] body;//тело массива
     private Boolean isEmpty = false;//создан ли массив и не пустой ли он
     private String returning;//переменная для вывода индекса нужного элемента
+    //private Object dynamicArray;
 
     Scanner scanner = new Scanner(System.in);
+    ClassAnalyzer classAnalyzer = new ClassAnalyzer();
 
     //создание массива с заложенным реальным размером
     public void myArray(){
@@ -67,6 +71,17 @@ public class dynamicArray {
         
     }
 
+    //реверс массива
+    public void reverseArray(){
+        int[] tmp = new int[size];
+        int random = 0;
+        for (int i = size - 1; i >= 0; i--) {
+            tmp[random] = body[i];
+            random++;
+        }
+        body = tmp;
+    }
+
     //Сортировка массива
     public void sort(int arg){
         boolean isMoved = false;
@@ -116,12 +131,48 @@ public class dynamicArray {
         return returning;
     }
 
-    //показ массива
-    public void show(){
-        for(int i = 0; i< size; i++){
-            System.out.print(body[i] + " ");
+    //красивый вывод еп
+    public String toString(){
+        StringBuilder str = new StringBuilder();
+        str.append("Ur array - ");
+        for(int i = 0; i < this.size; i++){
+            if(i == 0){
+                str.append("[").append(this.body[i]).append(" ");
+            }
+            if((i == this.size-1)&&(i >= 1)){
+                str.append(this.body[i]).append("]");
+            }
+            else if(i >= 1){
+                str.append(this.body[i]).append(" ");
+            }
         }
-        System.out.println();
+        str.append("\n").append("\n").append("Size - ").append(this.size);
+        str.append("\n").append("Reserved size - ").append(this.realSize);
+        str.append("\n").append(classAnalyzer.analyzeClass(this));
+
+        return str.toString();
+    }
+
+    //сравнение массивов
+    public boolean equals(Object obj){
+        dynamicArray compare = (dynamicArray) obj;
+        if(this == obj) {
+            System.out.println("array = array");
+            return true;
+        }
+        else if(!this.size.equals(compare.size)){
+            System.out.println("size = size");
+            return false;
+        }
+        else{
+            for(int i = 0; i < size; i++){
+                if(body[i] != compare.body[i]){
+                    System.out.println("wrong equals");
+                    return false;
+                }
+            }
+        }
+        return true;
     }
 
     //просмотр всех переменных из класса
